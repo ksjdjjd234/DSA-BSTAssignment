@@ -15,5 +15,13 @@ private void postOrderRecursion(LostItemNode current) {
 	
 	postOrderRecursion(current.left);
 	postOrderRecursion(current.right);
-	displayItem(current);
+
+	System.out.println("-------------------------");
+	System.out.println("Item ID: " + current.itemID);
+	System.out.println("Item Name: " + current.itemName);
+	System.out.println("Category: " + current.category);
+	System.out.println("Location: " + current.location);
+	System.out.println("Date Reported: " + current.dateReported);
+	System.out.println("Status: " + current.status);
+	System.out.println("-------------------------");
 }
