@@ -22,7 +22,7 @@ public class Main {
             System.out.println("5. Delete Lost Item by ID");
             System.out.println("6. Display all Lost Items (Preorder)");
             System.out.println("7. Display all Lost Items (Postorder)");
-            System.out.println("8. Dsiplay items by category");
+            System.out.println("8. Display items by category");
             System.out.println("9. Display statistics");
             System.out.println("10. Exit");
             System.out.print("Enter your choice: (1-10) ");
@@ -38,8 +38,31 @@ public class Main {
                         scanner.nextLine();
                         System.out.print("Enter Item name: ");
                         String name = scanner.nextLine();
-                        System.out.print("Enter Category: ");
-                        String category = scanner.nextLine();
+                        // Opted for predefined categories selection to reduce data inconsistencies 
+                        System.out.println("\n Enter Category: ");
+                        System.out.println("1. Electronics");
+                        System.out.println("2. Clothing");
+                        System.out.println("3. Documents");
+                        System.out.println("4. Accessories");
+                        System.out.println("5. Keys");
+                        System.out.println("6. Others");
+                        System.out.print("Enter category choice (1-6): ");
+                        String categoryInput = scanner.nextLine().trim();
+                        String category = ("Others");
+
+                        switch (categoryInput) {
+                            case "1": category = "Electronics"; break;
+                            case "2": category = "Clothing"; break;
+                            case "3": category = "Documents"; break;
+                            case "4": category = "Accessories"; break;
+                            case "5": category = "Keys"; break;
+                            case "6": category = "Others"; break;
+
+                            default:
+                                System.out.println("Invalid category choice, Defaulted to 'Others'");
+                                category = "Others";
+                        }
+
                         System.out.print("Enter Location Found: ");
                         String location = scanner.nextLine();
                         System.out.print("Enter Date Reported (e.g. DD//MM/YYYY) ");
@@ -83,9 +106,33 @@ public class Main {
                             break;
 
                         case 8:
-                            System.out.print("Enter Category to filter: ");
-                            String targetCategory = scanner.nextLine();
-                            bst.displayItemsByCategory(targetCategory);
+                            System.out.println("\nEnter Category to filter: ");
+                            System.out.println("1. Electronics");
+                            System.out.println("2. Clothing");
+                            System.out.println("3. Documents");
+                            System.out.println("4. Accessories");
+                            System.out.println("5. Keys");
+                            System.out.println("6. Others");
+                            System.out.print("\n Enter category choice (1-6) ");
+                            System.out.println("=======================");
+
+                            String filterChoice = scanner.nextLine().trim();
+                            String targetCategory = "";
+
+                            switch (filterChoice) {
+                                case "1": targetCategory = "Electronics"; break;
+                            case "2": targetCategory = "Clothing"; break;
+                            case "3": targetCategory = "Documents"; break;
+                            case "4": targetCategory = "Accessories"; break;
+                            case "5": targetCategory = "Keys"; break;
+                            case "6": targetCategory = "Others"; break;
+                            default:
+                                System.out.println("Invalid selection.");
+                                targetCategory = "";
+                            }
+                            if(!targetCategory.isEmpty()) {
+                                bst.displayItemsByCategory(targetCategory);
+                            }
                             break;
 
                         case 9:
