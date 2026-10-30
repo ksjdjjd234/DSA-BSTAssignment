@@ -4,7 +4,7 @@
         if (found != null) {
             System.out.println("Current status for Item ID " + itemID + ": " + found.status);
             if (found.status.equalsIgnoreCase("Unclaimed")) {
-                found.status = "Claimed by Owner";
+                found.status = "Unclaimed";
             } else {
                 found.status = "Unclaimed";
             }
