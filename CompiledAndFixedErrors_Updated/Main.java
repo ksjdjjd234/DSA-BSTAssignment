@@ -65,7 +65,7 @@ public class Main {
 
                         System.out.print("Enter Location Found: ");
                         String location = scanner.nextLine();
-                        System.out.print("Enter Date Reported (e.g. DD/MM/YYYY) ");
+                        System.out.print("Enter Date Reported (e.g. DD/MM/YYYY): ");
                         String date = scanner.nextLine();
 
                         String status = "Unclaimed"; // Set to "Unclaimed" as default when adding an item
