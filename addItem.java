@@ -3,7 +3,7 @@ public void addItem (int itemID, String itemName, String category, String locati
     root = addRecursive(root, itemID, itemName, category, locationFound, dateReported, status);
 }
 
-private LostItemNode addRecursive(LostItemNode current, int itemID, String itemName String category, String locationFound, String, dateReported String status) {
+private LostItemNode addRecursive(LostItemNode current, int itemID, String itemName, String category, String locationFound, String dateReported, String status) {
 
     if (current == null) {
 
@@ -28,7 +28,7 @@ private LostItemNode addRecursive(LostItemNode current, int itemID, String itemN
     
     else {
 
-        System.out.println("Duplicate itemID is not allowed.")
+        System.out.println("Duplicate itemID is not allowed.");
     }
 
     return current;
